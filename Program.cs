@@ -26,6 +26,7 @@ namespace COMP003A.CodingAssignment4
                 Console.WriteLine("3. View Inventory Summary");
                 Console.WriteLine("4. Exit");
                 Console.Write("Enter your choice: ");
+
                 try
                 { 
                     input = int.Parse(Console.ReadLine());
@@ -35,6 +36,7 @@ namespace COMP003A.CodingAssignment4
                     {
                         Console.WriteLine("Invalid choice. Please enter a number between 1 through 4.");
                     }
+
                 }
                 catch (Exception)
                 {
@@ -49,6 +51,13 @@ namespace COMP003A.CodingAssignment4
                     try
                     {
                         veggieName = Console.ReadLine();
+
+                        // Checking if the input is a word and not a number
+                        if (int.TryParse(veggieName, out int parsedNumber))
+                        {
+                            throw new Exception("Invalid input. Please enter a name.");
+                        }
+
                     }
                     catch (Exception)
                     {
@@ -77,6 +86,10 @@ namespace COMP003A.CodingAssignment4
                     {
                         Console.WriteLine("Inventory is full. Cannot add more products.");
                     }
+
+                }
+                else if (input == 2)
+                {
 
                 }
                  
