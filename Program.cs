@@ -90,6 +90,36 @@ namespace COMP003A.CodingAssignment4
                 }
                 else if (input == 2)
                 {
+                    Console.Write("Enter product name: ");
+                    string productInput = Console.ReadLine();
+
+                    // Now we are going to find the index of the product name in the array
+                    int index = Array.IndexOf(veggieNames, productInput);
+
+                    if (index != -1) // This if statement is going to check if the product name was found
+                    {
+                        Console.WriteLine($"Current quantity of {productInput}: {veggieQuantities[index]}");
+                        Console.Write("Enter a new quantity: ");
+
+                        try
+                        {
+                            int newveggieQuantity = int.Parse(Console.ReadLine());
+                            veggieQuantities[index] = newveggieQuantity; // Updated the quantity 
+                            Console.WriteLine("Product quantity updated successfully.");
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+                    }
+                    else
+                    {
+                            Console.WriteLine("Product does not exist.");
+                    }
+                    
+                }
+                else if (input == 3)
+                {
 
                 }
                  
