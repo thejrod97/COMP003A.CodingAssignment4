@@ -11,8 +11,8 @@ namespace COMP003A.CodingAssignment4
             // Declaring an array to store up to 10 elements 
             string[] veggieNames = new string[10];
             int[] veggieQuantities = new int[10];
-            string veggieName = "";
-            int veggieQuantity = 0;
+            string veggieName = ""; // This variable is used to keep track of new products  
+            int veggieQuantity = 0; // This variable is used to keep track of new quantities
             int count = 0; // To keep track of how many veggies are in the array
             int input = 0; // Record user input in menu
 
@@ -105,7 +105,7 @@ namespace COMP003A.CodingAssignment4
                         {
                             int newveggieQuantity = int.Parse(Console.ReadLine());
                             veggieQuantities[index] = newveggieQuantity; // Updated the quantity 
-                            Console.WriteLine("Product quantity updated successfully.");
+                            Console.WriteLine("Product quantity updated successfully!");
                         }
                         catch (Exception)
                         {
@@ -120,13 +120,34 @@ namespace COMP003A.CodingAssignment4
                 }
                 else if (input == 3)
                 {
+                    int totalveggieNames = 0;
+                    int totalveggieQuantities = 0;
 
+                    Console.WriteLine("Inventory Summary:");
+
+                    // Use a for loop to iterate through the arrays
+                    for (int i = 0; i < count; i++)
+                    {
+                        Console.WriteLine($"- {veggieNames[i]}: {veggieQuantities[i]}");
+                        totalveggieNames++;
+                        totalveggieQuantities += veggieQuantities[i];
+                    }
+
+                    // Here we calculate the average quantity of all the products
+                    double averageQuantity = (totalveggieNames > 0) ? (double)totalveggieQuantities / totalveggieNames : 0;
+
+                    // Display all products, quantities, and average
+                    Console.WriteLine($"Total Products: {totalveggieNames}");
+                    Console.WriteLine($"Total Quantity: {totalveggieQuantities}");
+                    Console.WriteLine($"Average Quantity: {averageQuantity:F2}");
                 }
-                 
+                else
+                {
+                    Console.WriteLine("Goodbye, Have a nice day!");
+                    break;
+                }
+
             }
-
-
-
 
         }
     }
