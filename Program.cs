@@ -45,18 +45,18 @@ namespace COMP003A.CodingAssignment4
 
                 if (input == 1)
                 {
-                    // Decided to up it up a little and call a method with variables inside of the param
+                    // Decided to up it up a little and call a method with arguments
                     AddProduct(veggieNames, veggieQuantities, veggieName, veggieQuantity, ref count);
                 }
                 else if (input == 2)
                 {
-                    // Same again here, getting used to calling methods with variables inside of the param
+                    // Same again here, getting used to calling methods with arguments
                     UpdateProduct(veggieNames, veggieQuantities);
                     
                 }
                 /*
                 I'm not going to use a another method here because I want to showcase a value method inside.
-                Otherwise I would have to keep everything symmetrical with the other input conditions.
+                Otherwise I would have in order to keep everything symmetrical with the other input conditions.
                 */
                 else if (input == 3)
                 {
