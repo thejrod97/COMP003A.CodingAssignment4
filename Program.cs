@@ -46,7 +46,7 @@ namespace COMP003A.CodingAssignment4
                 if (input == 1)
                 {
                     // Decided to up it up a little and call a method with variables inside of the param
-                    AddProduct(veggieNames, veggieQuantities, veggieName, veggieQuantity, count);
+                    AddProduct(veggieNames, veggieQuantities, veggieName, veggieQuantity, ref count);
                 }
                 else if (input == 2)
                 {
@@ -106,7 +106,7 @@ namespace COMP003A.CodingAssignment4
             Console.Write("Enter your choice: ");
         }
 
-        static void AddProduct(string[] veggieNames, int[] veggieQuantities, string veggieName, int veggieQuantity, int count)
+        static void AddProduct(string[] veggieNames, int[] veggieQuantities, string veggieName, int veggieQuantity, ref int count)
         {
             Console.Write("Enter product name: ");
 
